@@ -1,82 +1,43 @@
 body{
-    margin: 0;
+    margin:0;
     padding: 0;
-    background: #2c3e50;
+}
+
+.carousel{
+    height: 800px;
+    display: flex;
     overflow: hidden;
-}
-
-.slidershow{
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-
-
-.navigation{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.bar{
-    width: 50px;
-    height: 10px;
-    border: 2px solid #fff;
-    margin: 6px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-.bar:hover{
-    background: #fff;
-}
-
-input[name="r"]{
-    position: absolute;
-    visibility: hidden;
-}
-
-.slides{
-    width: 300%;
-    display: flex;
-}
-
-.slide{
-    width: 100%;
-    transition: 0.6s;
-
-}
-
-.slide img{
-    width: 100%;
-    height: auto;
+    
     
 }
 
-#r1:checked ~ .s1{
-    margin-left: 0;
+.slide{
+    position: relative;
+    width: 100%;
+    transition: 0.5s;   
 }
 
-#r2:checked ~ .s1{
-    margin-left: -100%;
+.slide img{
+    min-width: 100%;
+    height: 100%;
 }
 
-#r2:checked ~ .s0{
-    margin-left: -100%;
+.navigation{
+    position: absolute;
+    display: flex;
+    bottom: 200px;
+    left: 45%;
+    
 }
 
-#r3:checked ~ .s1{
-    margin-left: 0;
+.imageIndex{
+    width: 50px;
+    height: 10px;
+    border: solid 2px white;
+    margin: 20px;
+    cursor: pointer;
 }
 
-#r3:checked ~ .s2{
-    margin-left: -50%;
+.imageIndex:hover{
+    background-color: white;
 }
-
-
-
-
-
-
