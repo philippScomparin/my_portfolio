@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+body{
+    margin: 0;
+    padding: 0;
+    background: #2c3e50;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slidershow{
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-.App-link {
-  color: #61dafb;
+.bar:hover{
+    background: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
 }
+
+.slides{
+    width: 300%;
+    display: flex;
+}
+
+.slide{
+    width: 100%;
+    transition: 0.6s;
+
+}
+
+.slide img{
+    width: 100%;
+    height: auto;
+    
+}
+
+#r1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1{
+    margin-left: -100%;
+}
+
+#r2:checked ~ .s0{
+    margin-left: -100%;
+}
+
+#r3:checked ~ .s1{
+    margin-left: 0;
+}
+
+#r3:checked ~ .s2{
+    margin-left: -50%;
+}
+
+
+
+
+
+
