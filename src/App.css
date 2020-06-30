@@ -1,15 +1,93 @@
 body{
-    margin:0;
-    padding: 0;
     background-color: black;
+    color: #fff;
 }
 
+.wrapper{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden; 
+    margin: 0; 
+    padding: 0;
+}
+
+.introGrid{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    column-gap: 0;
+}
+
+.introduction{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 1;
+    padding-left: 20%;
+    
+}
+
+.title{
+    
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-size: 60px;
+}
+
+.introText{
+    width: 30%;
+    font-size: 30px;
+}
+
+
+hr{
+    position: relative;
+    margin: 4em 0;
+    animation-name: drawLine;
+    animation-duration: 2s;
+    width: 90%;
+    left: 5%;
+    
+}
+
+@keyframes drawLine{
+    from{
+        width: 0%;
+        left: 50%;
+        
+        
+    }
+    to{
+        width:90%;
+        left: 5%;
+    }
+}
+
+.philosophy{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.philosophy h1{
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.philosophy h2 {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 30px;
+}
 .carousel{
-    height: 800px;
+    height: 600px;
     display: flex;
     overflow: hidden;
-    
-    
 }
 
 .slide{
@@ -19,16 +97,16 @@ body{
 }
 
 .slide img{
-    min-width: 100%;
+    min-width: 90%;
     height: 100%;
+    left: 50%;
 }
 
 .navigation{
     position: absolute;
     display: flex;
-    bottom: 200px;
+    bottom: 500px;
     left: 45%;
-    
 }
 
 .imageIndex{
@@ -42,3 +120,15 @@ body{
 .imageIndex:hover{
     background-color: white;
 }
+
+.principle{
+   position: absolute;
+   top: 70%;
+   left: 30%;
+   font-size: 80px;
+    
+    
+}
+
+
+

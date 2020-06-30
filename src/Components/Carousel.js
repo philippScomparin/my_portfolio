@@ -12,21 +12,21 @@ import Laptop from '../images/laptop.jpg'
 function Carousel() {
 
 
-    const images_index = [<ImgComp src={Programming} />, <ImgComp src={Pepper} />, <ImgComp src={Laptop} />]
+    const images_index = [<ImgComp src={Laptop} name="laptop" />, <ImgComp src={Programming} name="programming"/>, <ImgComp src={Pepper} name="pepper" />]
     const [x, setx] = useState(0)
-    const [firstSelected, setfirstSelected] = useState({backgroundColor: "#fff"})
-    const [secondSelected, setsecondSelected] = useState({backgroundColor: null})
-    const [thirdSelected, setthirdSelected] = useState({backgroundColor: null})
+    const [laptopSelected, setlaptopSelected] = useState({backgroundColor: "#fff"})
+    const [programmingSelected, setprogrammingSelected] = useState({backgroundColor: null})
+    const [pepperSelected, setpepperSelected] = useState({backgroundColor: null})
     
    
 
 
     function changeImage(event) {
         const selectedImage = event.target.getAttribute("name")
-        if(selectedImage === "pepper"){
+        if(selectedImage === "programming"){
             setx(-100)
         }
-        else if(selectedImage === "laptop"){
+        else if(selectedImage === "pepper"){
             setx(-200)
         }
         else {
@@ -38,19 +38,22 @@ function Carousel() {
 
     function setLabelBackground(selectedImage){
         if(selectedImage === "pepper"){
-            setsecondSelected({backgroundColor: "#fff"})
-            setfirstSelected({backgroundColor: null})
-            setthirdSelected({backgroundColor: null})
+            setlaptopSelected({backgroundColor: null})
+            setprogrammingSelected({backgroundColor: null})
+            setpepperSelected({backgroundColor: "#fff"})
         }
-        else if(selectedImage === "laptop"){
-            setsecondSelected({backgroundColor: null})
-            setfirstSelected({backgroundColor: null})
-            setthirdSelected({backgroundColor: "#fff"})
+        else if(selectedImage === "programming"){
+            setlaptopSelected({backgroundColor: null})
+            setprogrammingSelected({backgroundColor: "#fff"})
+            setpepperSelected({backgroundColor: null})
+            
+            
+            
         }
         else {
-            setsecondSelected({backgroundColor: null})
-            setfirstSelected({backgroundColor: "#fff"})
-            setthirdSelected({backgroundColor: null})
+            setlaptopSelected({backgroundColor: "#fff"})
+            setprogrammingSelected({backgroundColor: null})
+            setpepperSelected({backgroundColor: null})
             
         }
 
@@ -72,9 +75,10 @@ function Carousel() {
                         </div>)
                 })}
                 <div className="navigation">
-                    <label className="imageIndex" name="programming" onClick={changeImage} style={firstSelected}></label>
-                    <label className="imageIndex" name="pepper" onClick={changeImage} style={secondSelected}></label>
-                    <label className="imageIndex" name="laptop" onClick={changeImage} style={thirdSelected}></label>
+                    <label className="imageIndex" name="laptop" onClick={changeImage} style={laptopSelected}></label>
+                    <label className="imageIndex" name="programming" onClick={changeImage} style={programmingSelected}></label>
+                    <label className="imageIndex" name="pepper" onClick={changeImage} style={pepperSelected}></label>
+                    
                 </div>
             </div>
 
