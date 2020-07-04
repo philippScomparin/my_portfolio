@@ -1,12 +1,23 @@
+html{
+    box-sizing: border-box;
+
+}
+
+*, *:before, *::after{
+    box-sizing: inherit;
+}
+
 body{
     background-color: black;
     color: #fff;
 }
 
+
 .wrapper{
     display: flex;
     position: relative;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     overflow: hidden; 
     margin: 0; 
@@ -24,7 +35,7 @@ body{
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column: 1;
-    padding-left: 20%;
+    padding-left: 10%;
     
 }
 
@@ -36,18 +47,18 @@ body{
 }
 
 .introText{
-    width: 30%;
+    width: 40%;
     font-size: 30px;
 }
 
 
 hr{
-    position: relative;
     margin: 4em 0;
     animation-name: drawLine;
     animation-duration: 2s;
     width: 90%;
     left: 5%;
+    
     
 }
 
@@ -67,67 +78,77 @@ hr{
 .philosophy{
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
 }
 
 .philosophy h1{
-    position: relative;
-    font-size: 50px;
-    text-align: center;
-
+    font-size: 60px;
 }
 
-.philosophy h2 {
+.philosophy h2{
+    font-size: 30px;
+    font-style: italic;
+    
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    position: relative;
+    margin-top: 10px;
+}
+
+.carouselImgs{
+    display: flex;
+    transition: 0.4s;
+    align-items: center;
+    
+}
+
+.carouselPrinciples{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.carouselPrinciples h3{
+    font-size: 50px;
+    position: relative;
+    left: 25%;
+}
+
+.carouselPrinciples p{
     position: relative;
     font-size: 30px;
-    text-align: center;
-    width: 100%;
-    padding-bottom: 30px;
+    width: 50%;
+    left: 25%;
+    
 }
-.carousel{
-    height: 600px;
+
+.carousel img{
+    width: 50%;
+}
+
+.imgNavigation{
     display: flex;
-    overflow: hidden;
-}
-
-.slide{
-    position: relative;
-    width: 100%;
-    transition: 0.5s;   
-}
-
-.slide img{
-    min-width: 90%;
-    height: 100%;
-    left: 50%;
-}
-
-.navigation{
     position: absolute;
-    display: flex;
-    bottom: 500px;
-    left: 45%;
+    top: -2%;
 }
 
-.imageIndex{
+.imgIndex{
     width: 50px;
-    height: 10px;
-    border: solid 2px white;
-    margin: 20px;
+    height: 20px;
+    border: 2px solid white;
+    margin-right: 10px;
     cursor: pointer;
 }
 
-.imageIndex:hover{
+.imgIndex:hover{
     background-color: white;
-}
-
-.principle{
-   position: absolute;
-   top: 70%;
-   left: 30%;
-   font-size: 80px;
-    
-    
 }
 
 
