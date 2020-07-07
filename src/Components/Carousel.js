@@ -10,21 +10,23 @@ function Carousel() {
     const [styleMacIdx, setstyleMacIdx] = useState({backgroundColor: null})
     const [stylePeppercIdx, setstylePepperIdx] = useState({backgroundColor: null})
     
+    
     function changeImg(event) {
         const name = event.target.getAttribute("name")
         if(name === "laptop"){
             setx(0)
            
         }
-        if(name === "mac"){
+        else if(name === "mac"){
             setx(-100)
             
             }
-        if(name === "pepper") {
+        else {
             setx(-200)
             
         }
     }
+
 
     useEffect(() => {
         
@@ -34,16 +36,32 @@ function Carousel() {
             setstylePepperIdx({backgroundColor: null})
             
         }
-        if(x===-100){
+        else if(x===-100){
             setstyleLaptopIdx({backgroundColor: null})
             setstyleMacIdx({backgroundColor: "#fff"})
             setstylePepperIdx({backgroundColor: null})
         }
-        if(x===-200){
+        else {
             setstyleLaptopIdx({backgroundColor: null})
             setstyleMacIdx({backgroundColor: null})
             setstylePepperIdx({backgroundColor: "#fff"})
         }
+
+        const timer = setTimeout(() => {
+            if(x===0){
+                setx(-100)
+            }
+            else if (x===-100){
+                setx(-200)
+            }
+            else {
+                setx(0)
+            }
+
+        }, 30000);
+
+        return() => clearTimeout(timer)
+
         
     }, [x]);
 
@@ -52,19 +70,20 @@ function Carousel() {
            <div className="carouselImgs" style={{transform: `translateX(${x}%)`}}>
                <div className="carouselPrinciples">
                    <h3>Never Stop Learning</h3>
-                   <p>Technology changes every day. Keeping up to date with the newest technologies is what makes it so interesting and fun.</p>
+                   <p>Technology changes every day. Keeping up to date with the newest technologies
+                       is what makes it so interesting and fun to me.</p>
                </div>
            <img src={laptop} alt="laptop"/>
            <div className="carouselPrinciples">
            <h3>Focus On Developing Skills</h3>
-                   <p>With hundreds of programming languages and tools out there it is easy to get lost. It is important to focus on developing
-                    skills and to not follow every trend.
+                   <p>With hundreds of programming languages and tools out there it is easy to get lost.
+                       I try to not follow every trend and to rather work on my skills.
                    </p>
                </div>
            <img src={mac} alt="mac"/>
            <div className="carouselPrinciples">
            <h3>Accept Challenges</h3>
-                   <p>To get out of the comfort zone is key to push yourself forwards.</p>
+                   <p>I love to get out of my comfort zone to push myself forward.</p>
                </div>
            <img src={pepper} alt="pepper"/>
            </div>
